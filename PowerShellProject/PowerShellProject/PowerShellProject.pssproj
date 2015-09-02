@@ -28,6 +28,20 @@
   </PropertyGroup>
   <ItemGroup />
   <ItemGroup>
+    <Compile Include="new  1.ps1" />
+    <Compile Include="new  10" />
+    <Compile Include="new  11" />
+    <Compile Include="new  12" />
+    <Compile Include="new  13" />
+    <Compile Include="new  14" />
+    <Compile Include="new  15" />
+    <Compile Include="new  2" />
+    <Compile Include="new  3.txt" />
+    <Compile Include="new  4.sql" />
+    <Compile Include="new  5.txt" />
+    <Compile Include="new  6.txt" />
+    <Compile Include="new  7.txt" />
+    <Compile Include="new  8" />
     <Compile Include="Script.ps1" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
