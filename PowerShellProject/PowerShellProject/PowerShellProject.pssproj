@@ -43,6 +43,7 @@
     <Compile Include="new  6.ps1" />
     <Compile Include="new  7.ps1" />
     <Compile Include="new  8.ps1" />
+    <Compile Include="Refonte.ps1" />
     <Compile Include="Script.ps1" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
