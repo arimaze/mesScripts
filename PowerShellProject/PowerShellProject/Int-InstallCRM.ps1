@@ -15,19 +15,20 @@ $PrimaryLogin = "bbint\svc.wssadmin-int"
 
 New-SPSite -Url $url –ContentDatabase $ContentDatabase -Name $WebsiteName –Description $WebsiteDesc  -Template $Template -OwnerAlias $PrimaryLogin
 
-#STEP 2 add the solution to the site collection via GUI
+#STEP 2 Add the solution to the site collection via GUI
 
-#STEP 3 allow .htc files to the web app PORTAL-443 running this script
+#STEP 3 Allow .htc files to the web app PORTAL-443 running this script
 C:\Distrib\crm\AllowHtcExtn.ps1 "https://intranet-int.bourbon-online.com"
 
 #STEP 4 IISreset all servers in the farm running this script
 ?C:\Users\svc.wssadmin-int\Desktop\PS_DoIISReset_AllServersInFarm.ps1
 
-#STEP 5 add bipfront to sp shell admin
+#STEP 5 Add bipfront to sp shell admin
 
-#STEP 6 add content data base to always on
+#STEP 6 Add content data base to always on
 
-#STEP 7 set autogrow .mdf to 500 mb unlimited
+#STEP 7 Set autogrow .mdf to 500 mb unlimited
+
 
 
 
