@@ -28,6 +28,7 @@
   </PropertyGroup>
   <ItemGroup />
   <ItemGroup>
+    <Compile Include="Int-InstallCRM.ps1" />
     <Compile Include="new  1.ps1" />
     <Compile Include="new  10.txt" />
     <Compile Include="new  11.ps1" />

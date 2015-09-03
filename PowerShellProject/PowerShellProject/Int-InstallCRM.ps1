@@ -19,6 +19,6 @@ New-SPSite -Url $url –ContentDatabase $ContentDatabase -Name $WebsiteName –Descr
 #STEP 3 allow .htc files to the web app PORTAL-443 running this script
 C:\Distrib\crm\AllowHtcExtn.ps1 "https://intranet-int.bourbon-online.com"
 
-#STEP 4 IISreset all servers in the farm
+#STEP 4 IISreset all servers in the farm running this script
 ?C:\Users\svc.wssadmin-int\Desktop\PS_DoIISReset_AllServersInFarm.ps1
 
