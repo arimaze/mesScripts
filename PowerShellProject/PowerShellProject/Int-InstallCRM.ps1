@@ -1,7 +1,7 @@
 #
 # InstallCRM.ps1
 #
-# STEP 0: sandbox solution started on 2 applications server 03 & 04
+# STEP 0: Sandbox solution started on 2 applications servers 03 & 04
 # STEP 1 Create content DB and site collection
 New-SPContentDatabase "BB2013_Int_CRM_Content" -DatabaseServer "MRSSPI01\SPI" -WebApplication https://intranet-int.bourbon-online.com -MaxSiteCount 5000 -WarningSiteCount 2000
 New-SPManagedPath "crm" -WebApplication "https://intranet-int.bourbon-online.com" -Explicit
