@@ -22,3 +22,11 @@ C:\Distrib\crm\AllowHtcExtn.ps1 "https://intranet-int.bourbon-online.com"
 #STEP 4 IISreset all servers in the farm running this script
 ?C:\Users\svc.wssadmin-int\Desktop\PS_DoIISReset_AllServersInFarm.ps1
 
+#STEP 5 add bipfront to sp shell admin
+
+#STEP 6 add content data base to always on
+
+#STEP 7 set autogrow .mdf to 500 mb unlimited
+
+
+
