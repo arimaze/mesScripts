@@ -6,5 +6,7 @@ Move-SPSite https://intranet-int.bourbon-online.com/mydashboards -DestinationDat
 Get-SPSite -ContentDatabase BB2013_Int_Portal_Content
 
 
+
+
 get-spcontentdatabase | add-spshelladmin bourbon\svc.bippfront
 

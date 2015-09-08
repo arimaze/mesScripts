@@ -29,6 +29,7 @@
   <ItemGroup />
   <ItemGroup>
     <Compile Include="Delete recycle bin.ps1" />
+    <Compile Include="force delete site collection.ps1" />
     <Compile Include="Int-InstallCRM.ps1" />
     <Compile Include="new  1.ps1" />
     <Compile Include="new  10.txt" />
