@@ -38,7 +38,7 @@
     <Compile Include="new  13.ps1" />
     <Compile Include="new  14.ps1" />
     <Compile Include="new  15.ps1" />
-    <Compile Include="new  2.ps1" />
+    <Compile Include="Procedure to restore content db and fix roles.ps1" />
     <Compile Include="Restore-content-db .ps1" />
     <Compile Include="new  4.txt" />
     <Compile Include="new  5.ps1" />
@@ -46,7 +46,8 @@
     <Compile Include="new  7.ps1" />
     <Compile Include="new  8.ps1" />
     <Compile Include="Refonte.ps1" />
-    <Compile Include="Script.ps1" />
+    <Compile Include="Export-Import-Vessel.ps1" />
+    <Compile Include="Livraison20150911-PreProd.ps1" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Target Name="Build" />

@@ -29,6 +29,22 @@ ALTER ROLE [SPDataAccess] ADD MEMBER [BOURBON\svc.wssweb-pre]
 
 
 
+USE [BB2013_PreProd_Publishing_Content]
+GO
+ALTER AUTHORIZATION ON ROLE::[SharePoint_Shell_Access] TO [dbo]
+GO
+
+--Delete user bourbon\svc.wssfarm-prod
+
+
+--change dbo
+Use BB2013_PreProd_Publishing_Content
+go
+EXEC sp_changedbowner 'bourbon\svc.wssadmin-pre'
+
+
+
+
 Mount-SPContentDatabase BB2013_PreProd_Publishing_Content –WebApplication https://intranet-pre.bourbon-online.com
 Test-SPContentDatabase -Name BB2013_PreProd_Publishing_Content –WebApplication https://intranet-pre.bourbon-online.com
 Get-SPContentDatabase | Add-SPShellAdmin bourbon\svc.bippfront
