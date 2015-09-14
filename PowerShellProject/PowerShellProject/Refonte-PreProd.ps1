@@ -44,6 +44,15 @@ get-spcontentdatabase | add-spshelladmin bourbon\svc.bippfront
 Restore-SPSite https://intranet-pre.bourbon-online.com/qa -Path c:\root.bak -ContentDatabase BB2013_PreProd_Quality_Content -force
 
 
+#Check site and execute powershells script to correct
+#Change layout default and default_fr
+#Change all /QA/QMS layouts
+#CHange masterpage /qa
+#change masterpage /qa/qms
+#Create result source QMS
+#Create content source QA on /qa
+#Redeploy last update for QMS
+#change master page css
 
 
 #On MRSSPS104
@@ -53,6 +62,9 @@ $db=get-spcontentdatabase bb2013_PreProd_publishing_content
 $db.repair($false)
 
 Backup-SPSite -Identity https://intranet-pre.bourbon-online.com/sites/refonteintranet -Path c:\refonte.bak
+
+
+# Disable FULL Backup all databases maintenance plan on nodes 101 & 102
 Remove-SPSite https://intranet-pre.bourbon-online.com/sites/refonteintranet
 
 #gradual delete
@@ -61,6 +73,11 @@ Remove-SPSite https://intranet-pre.bourbon-online.com/sites/refonteintranet
 Restore-SPSite https://intranet-pre.bourbon-online.com -Path c:\refonte.bak -ContentDatabase BB2013_PreProd_Publishing_Content -force
 
 
+#Review crawl and delete "refonte intranet" or "publishing"
+#Full crawl "PORTAL" content source
+
+#change PORTAL to "continuous crawl"
+#Enable FULL Backup all databases maintenance plan on nodes 101 & 102
 
 
 
