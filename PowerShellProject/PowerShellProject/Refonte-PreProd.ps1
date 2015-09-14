@@ -21,7 +21,7 @@ FROM
 ORDER BY 
    [Length] DESC
 
-#Move my dashboard
+#Move my dashboards
 New-SPContentDatabase "BB2013_PreProd_Dashboards_Content" -DatabaseServer "MRSSPSSPPP\SPPP" -WebApplication https://intranet-pre.bourbon-online.com -MaxSiteCount 5000 -WarningSiteCount 2000
 Move-SPSite https://intranet-pre.bourbon-online.com/mydashboards -DestinationDatabase BB2013_PreProd_Dashboards_Content
 Get-SPSite -ContentDatabase BB2013_PreProd_Portal_Content
