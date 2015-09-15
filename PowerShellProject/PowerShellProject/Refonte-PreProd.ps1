@@ -44,7 +44,7 @@ Backup-SPSite -Identity https://intranet-pre.bourbon-online.com -Path \\mrssps10
 
 
 
-Restore-SPSite https://intranet-pre.bourbon-online.com/qa -Path c:\racine.bak -ContentDatabase BB2013_PreProd_Quality_Content -force
+Restore-SPSite https://intranet-pre.bourbon-online.com/qa -Path \\mrssps102\t$\racine.bak -ContentDatabase BB2013_PreProd_Quality_Content -force
 
 
 #Check site and execute powershells script to correct
@@ -55,7 +55,7 @@ Restore-SPSite https://intranet-pre.bourbon-online.com/qa -Path c:\racine.bak -C
 #Create result source QMS
 #Create content source QA on /qa
 #Redeploy last update for QMS
-#change master page css
+#change master page css to point to /qa/style....
 
 
 #On MRSSPS104

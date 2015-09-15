@@ -20,20 +20,6 @@ PS C:\Users\svc.wssadmin-dev>
 
 
 
-$w = Get-SPWebApplication -identity http://mybourbon-pre.bbdev.priv
-$w.GrantAccessToProcessIdentity("bbdev\svc.bidfront")
-
-$w = Get-SPWebApplication -identity http://mysite-pre.bbdev.priv
-$w.GrantAccessToProcessIdentity("bbdev\svc.bidfront")
-
-$w = Get-SPWebApplication -identity http://intranet-pre.bbdev.priv
-$w.GrantAccessToProcessIdentity("bbdev\svc.bidfront")
-
-
-
-
-get-spcontentdatabase | add-spshelladmin bbdev\svc.bidfront
-
 
 
 
