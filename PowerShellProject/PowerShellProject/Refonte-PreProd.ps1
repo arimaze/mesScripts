@@ -27,21 +27,24 @@ Move-SPSite https://intranet-pre.bourbon-online.com/mydashboards -DestinationDat
 Get-SPSite -ContentDatabase BB2013_PreProd_Portal_Content
 Get-SPSite -ContentDatabase BB2013_PreProd_Dashboards_Content
 get-spcontentdatabase | add-spshelladmin bourbon\svc.bippfront
+#Ad database to AG
 
-
-Backup-SPSite -Identity https://intranet-pre.bourbon-online.com -Path \\mrssps102\t$\root.bak
 
 New-SPContentDatabase "BB2013_PreProd_Quality_Content" -DatabaseServer "MRSSPSSPPP\SPPP" -WebApplication https://intranet-pre.bourbon-online.com -MaxSiteCount 5000 -WarningSiteCount 2000
-
+#mdf : 81920 mb and 10240 autogrow
+#ldf : 5120 mb and 10 percent
 #Add database to AG
 #Check autogrow for this new content database
-
 New-SPManagedPath "qa" -WebApplication "https://intranet-pre.bourbon-online.com" -Explicit
-
 get-spcontentdatabase | add-spshelladmin bourbon\svc.bippfront
 
+Backup-SPSite -Identity https://intranet-pre.bourbon-online.com -Path \\mrssps102\t$\racine.bak
 
-Restore-SPSite https://intranet-pre.bourbon-online.com/qa -Path c:\root.bak -ContentDatabase BB2013_PreProd_Quality_Content -force
+
+
+
+
+Restore-SPSite https://intranet-pre.bourbon-online.com/qa -Path c:\racine.bak -ContentDatabase BB2013_PreProd_Quality_Content -force
 
 
 #Check site and execute powershells script to correct
