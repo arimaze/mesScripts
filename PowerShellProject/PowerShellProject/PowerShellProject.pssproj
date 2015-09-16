@@ -34,6 +34,7 @@
     <Compile Include="Disable-myBOURBON-features.ps1" />
     <Compile Include="Access-request-administration.txt" />
     <Compile Include="Create-new-Applications-site-collection-Int.ps1" />
+    <Compile Include="Pre-Prod-InstallCRM.ps1" />
     <Compile Include="Stop-Claim.ps1" />
     <Compile Include="Set-All-spweb-read-only.ps1" />
     <Compile Include="Create-new-Applications-site-collection-PreProd.ps1" />
