@@ -33,7 +33,9 @@ get-spcontentdatabase | add-spshelladmin bourbon\svc.bippfront
 New-SPContentDatabase "BB2013_PreProd_Quality_Content" -DatabaseServer "MRSSPSSPPP\SPPP" -WebApplication https://intranet-pre.bourbon-online.com -MaxSiteCount 5000 -WarningSiteCount 2000
 #mdf : 81920 mb and 10240 autogrow
 #ldf : 5120 mb and 10 percent
-#Add database to AG
+#-----------------------------------------------------------------------------------------------Add database to AG
+############################## change to simple mode
+#############################  disable full user databases & log backup user database
 #Check autogrow for this new content database
 New-SPManagedPath "qa" -WebApplication "https://intranet-pre.bourbon-online.com" -Explicit
 get-spcontentdatabase | add-spshelladmin bourbon\svc.bippfront
@@ -48,10 +50,10 @@ Restore-SPSite https://intranet-pre.bourbon-online.com/qa -Path \\mrssps102\t$\r
 
 
 #Check site and execute powershells script to correct
-#Change layout default and default_fr
-#Change all /QA/QMS layouts
-#CHange masterpage /qa
-#change masterpage /qa/qms
+
+#Change all /QA/QMS layouts via powershell script
+#CHange masterpage /qa to bourbon 2011 home
+#change masterpage /qa/qms Bourbon-2011 qms
 #Create result source QMS
 #Create content source QA on /qa
 #Redeploy last update for QMS
@@ -64,22 +66,38 @@ Restore-SPSite https://intranet-pre.bourbon-online.com/qa -Path \\mrssps102\t$\r
 $db=get-spcontentdatabase bb2013_PreProd_publishing_content
 $db.repair($false)
 
+############################## Remove database PUBLISHING_CONTENT from AG and delete database on passive node
+############################## change database publishing to simple mode
+#############################  disable full user databases & log backup user database on passive node
+
+
+############################## Remove database PORTAL_CONTENT from AG and delete database on passive node
+############################## change database publishing to simple mode
+#############################  disable full user databases & log backup user database on passive node
+
 Backup-SPSite -Identity https://intranet-pre.bourbon-online.com/sites/refonteintranet -Path c:\refonte.bak
 
-
+# check autogrow publishing and portal
+# change log size publishing to 100 go . if no place ! hay hay hay
 # Disable FULL Backup all databases maintenance plan on nodes 101 & 102
 Remove-SPSite https://intranet-pre.bourbon-online.com/sites/refonteintranet
 
+#check SPDeletedSite
 #gradual delete
+
+#IIS reset all servers via .PS1
 
 #Resto
 Restore-SPSite https://intranet-pre.bourbon-online.com -Path c:\refonte.bak -ContentDatabase BB2013_PreProd_Publishing_Content -force
+ 
 
 
 #Review crawl and delete "refonte intranet" or "publishing"
 #Full crawl "PORTAL" content source
 
 #change PORTAL to "continuous crawl"
+
+#Add DATABASES to AG
 #Enable FULL Backup all databases maintenance plan on nodes 101 & 102
 
 
