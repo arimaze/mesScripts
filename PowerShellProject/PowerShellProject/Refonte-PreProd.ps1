@@ -33,9 +33,8 @@ get-spcontentdatabase | add-spshelladmin bourbon\svc.bippfront
 New-SPContentDatabase "BB2013_PreProd_Quality_Content" -DatabaseServer "MRSSPSSPPP\SPPP" -WebApplication https://intranet-pre.bourbon-online.com -MaxSiteCount 5000 -WarningSiteCount 2000
 #mdf : 81920 mb and 10240 autogrow
 #ldf : 5120 mb and 10 percent
-#-----------------------------------------------------------------------------------------------Add database to AG
-############################## change to simple mode
-#############################  disable full user databases & log backup user database
+#Add database to AG
+
 #Check autogrow for this new content database
 New-SPManagedPath "qa" -WebApplication "https://intranet-pre.bourbon-online.com" -Explicit
 get-spcontentdatabase | add-spshelladmin bourbon\svc.bippfront
@@ -66,27 +65,27 @@ Restore-SPSite https://intranet-pre.bourbon-online.com/qa -Path \\mrssps102\t$\r
 $db=get-spcontentdatabase bb2013_PreProd_publishing_content
 $db.repair($false)
 
-############################## Remove database PUBLISHING_CONTENT from AG and delete database on passive node
-############################## change database publishing to simple mode
-#############################  disable full user databases & log backup user database on passive node
 
-
-############################## Remove database PORTAL_CONTENT from AG and delete database on passive node
-############################## change database publishing to simple mode
-#############################  disable full user databases & log backup user database on passive node
 
 Backup-SPSite -Identity https://intranet-pre.bourbon-online.com/sites/refonteintranet -Path c:\refonte.bak
 
 # check autogrow publishing and portal
-# change log size publishing to 100 go . if no place ! hay hay hay
+# change log size publishing to 108 go (total size when removing site collection) . if no place ! hay hay hay
 # Disable FULL Backup all databases maintenance plan on nodes 101 & 102
+
+#Add new log file to spp data because there are no space on sp log
+#publishing log file 100 go
+#Portal log file 180
 Remove-SPSite https://intranet-pre.bourbon-online.com/sites/refonteintranet
+Remove-SPSite https://intranet-pre.bourbon-online.com
 
 #check SPDeletedSite
 #gradual delete
 
 #IIS reset all servers via .PS1
 
+
+#check free SQL space Portal log file will increase. Publishing too even simple recovery mode
 #Resto
 Restore-SPSite https://intranet-pre.bourbon-online.com -Path c:\refonte.bak -ContentDatabase BB2013_PreProd_Publishing_Content -force
  
