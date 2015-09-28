@@ -43,17 +43,18 @@ Backup-SPSite -Identity https://intranet.bourbon-online.com -Path c:\racine.bak
 Restore-SPSite https://intranet.bourbon-online.com/qa -Path c:\racine.bak -ContentDatabase BB2013_Prod_Quality_Content -force
 
 
-#Check site and execute powershells script to correct
-#Change all /QA/QMS layouts via powershell script
-#CHange masterpage /qa to bourbon 2011 home
-#change masterpage /qa/qms Bourbon-2011 qms
-#Create result source QMS
-#Create content source QA on /qa
-#Redeploy last update for QMS
-#change master page css to point to /qa/style....
+# Check site and execute powershells script to correct
+# Change all /QA/QMS layouts via powershell script
+# Change masterpage /qa to bourbon 2011 home
+# change masterpage /qa/qms Bourbon-2011 qms
+# Create result source QMS
+# Create content source QA on /qa
+# Redeploy last update for QMS
+# Change master page css to point to /qa/style.... /for all sub sites . No exceptions
 
-
+#####################################   REFONTE ###################################################################
 #check orphans
+# Change backup logs maintenance plan to 15 mns on 01 and 02 nodes
 $db=get-spcontentdatabase bb2013_Prod_publishing_content
 $db.repair($false)
 
@@ -77,6 +78,8 @@ Restore-SPSite https://intranet.bourbon-online.com -Path c:\refonte.bak -Content
 
 
 #Review crawl and delete "refonte intranet" or "publishing"
+#dismount publishing content database
+
 #Full crawl "PORTAL" content source
 #change PORTAL to "continuous crawl"
 
