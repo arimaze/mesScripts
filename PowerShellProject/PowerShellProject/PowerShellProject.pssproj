@@ -26,8 +26,17 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <ItemGroup />
   <ItemGroup>
+    <Content Include="Alter-Database-SINGLE-USER-WITH-ROLLBACK-IMMEDIATE.sql" />
+    <Content Include="LogSPace.sql" />
+    <Content Include="Restore-Back-Hub-To-PreProd.sql" />
+    <Content Include="Select-Log-Reuse-Wait.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Change-CentralAdmin-Banner.ps1" />
+    <Compile Include="Check-SiteCollection-Replicable-Attributes.ps1" />
+    <Compile Include="Configure-Super-Accounts.ps1" />
+    <Compile Include="Create-PerformancePoint-ServiceApplication.ps1" />
     <Compile Include="Create-Search-Topology.ps1" />
     <Compile Include="Delete recycle bin.ps1" />
     <Compile Include="force delete site collection.ps1" />
@@ -55,6 +64,9 @@
     <Compile Include="Refonte-Int.ps1" />
     <Compile Include="Export-Import-Vessel.ps1" />
     <Compile Include="Livraison20150911-PreProd.ps1" />
+    <Compile Include="Update-People-Picker-Multi-Domains.ps1" />
+    <Compile Include="Update-Property-Bag.ps1" />
+    <Compile Include="Workspace-API-Query.ps1" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Target Name="Build" />
