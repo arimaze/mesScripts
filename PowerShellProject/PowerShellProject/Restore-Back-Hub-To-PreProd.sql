@@ -8,7 +8,6 @@ MOVE N'BB2013_Prod_Publish_Content_log' To 'S:\log\MSSQL11.SPPP\MSSQL\Data\BB201
 GO
 
 
-
 CREATE USER [BOURBON\svc.wssapp-pre] FOR LOGIN [BOURBON\svc.wssapp-pre] WITH DEFAULT_SCHEMA=[BOURBON\svc.wssapp-pre]
 GO
 ALTER ROLE [SPDataAccess] ADD MEMBER [BOURBON\svc.wssapp-pre]
